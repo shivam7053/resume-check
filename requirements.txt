@@ -3,6 +3,11 @@ fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 python-multipart==0.0.9
 
+# Build tools (often need to be up-to-date for complex packages)
+setuptools>=69.5.1
+wheel>=0.43.0
+# ML / similarity (install numpy first to avoid build issues)
+numpy==1.26.4
 # Resume parsing
 pdfplumber==0.11.0
 python-docx==1.1.2
@@ -11,9 +16,8 @@ python-docx==1.1.2
 spacy==3.8.2
 # spaCy model is downloaded in render-build.sh (not a pip package on free tier)
 
-# ML / similarity
+# ML / similarity (scikit-learn depends on numpy)
 scikit-learn==1.5.0
-numpy==1.26.4
 
 # Pydantic v2 (bundled with FastAPI 0.111)
 pydantic>=2.10.0
