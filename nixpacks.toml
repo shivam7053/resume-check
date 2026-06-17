@@ -1,11 +1,12 @@
 [variables]
 PYTHON_VERSION = "3.11"
+NIXPACKS_PYTHON_VERSION = "3.11"
 
 [phases.setup]
 nixPkgs = ["python311", "gcc"]
 
 [phases.build]
-cmds = ["pip install -r requirements.txt", "python -m spacy download en_core_web_sm"]
+cmds = ["python3 -m pip install --upgrade pip", "python3 -m pip install -r requirements.txt", "python3 -m spacy download en_core_web_sm"]
 
 [start]
-cmd = "fastapi run main.py --port $PORT"
+cmd = "python3 -m fastapi run main.py --port $PORT"
